@@ -26,9 +26,13 @@ Tbox MPU执行下列命令
 漏洞详情：
 
   1、at fwd程序 支持QABFOTA命令
+  ![image](0.png)
   2、进入处理函数5AF4
+  ![image](1.png)
   3、off_267C4是子功能列表，["reboot",func_reboot,"state",func_state…]
+  ![image](2.png)
   3、分析package处理函数 sub_11B20+1
+  ![image](3.png)
   4、system(s)函数，其中s直接引用用户的输入，没有做过滤
 
 POC：
@@ -38,6 +42,7 @@ Echo 'AT+QABFOTA="package",1&&reboot' >/dev/ttyUSB1
 #4G模组执行
 Ql_cmd at 'AT+QABFOTA="package",1&&reboot'
 5、进入模组使用strace分析，可以看到命令被添加到"sh","-c","fotainfo…" 中
+![image](4.png)
 
 
 
