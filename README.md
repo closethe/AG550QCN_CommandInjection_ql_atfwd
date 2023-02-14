@@ -1,3 +1,8 @@
+# 背景
+```
+        2022年，渗透测试某智能网联汽车，车型TBOX由均联智行开发，TBOX MPU中发现5G模组升级文件。拆包后，进行漏洞挖掘，发现存在多个漏洞，漏洞详情通过邮件发送给移远通信，他们修复后，让我们提交CVE。
+```
+
 # 漏洞描述：
 ```
         AG550QCN模组ql_atfwd对AT指令'AT+QABFOTA=“package”... '处理时，参数过滤不严格，存在命令注入漏洞，可以直接root权限执行任意命令，并反弹shell。
@@ -42,5 +47,7 @@
 
 
 ###
+cyber security researcher
+
 sen.yuan@bangcle.com
 
